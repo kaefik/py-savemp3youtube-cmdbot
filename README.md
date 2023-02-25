@@ -91,11 +91,16 @@ systemctl start start-youtube-audio.service
 docker build -t tlgyoutube2mp3bot .  
 ```
 
-* запуск образа
+* запуск образа для тестирования
 
 ```bash
-docker run --rm   -v "/home/oilnur/youtube2mp3/config_tlg.py:/home/app/cfg/config_tlg.py" -v "/home/oilnur/youtube2mp3/mp3:/home/app/mp3" tlgyoutube2mp3bot
+docker run --rm --it   -v "/home/oilnur/youtube2mp3/config_tlg.py:/home/app/cfg/config_tlg.py" -v "/home/oilnur/youtube2mp3/mp3:/home/app/mp3" tlgyoutube2mp3bot
 ```
 
+* запуск образа в бою
+
+```bash
+docker run --restart=always -v "/home/oilnur/youtube2mp3/config_tlg.py:/home/app/cfg/config_tlg.py" -v "/home/oilnur/youtube2mp3/mp3:/home/app/mp3" tlgyoutube2mp3bot
+```
 
 
